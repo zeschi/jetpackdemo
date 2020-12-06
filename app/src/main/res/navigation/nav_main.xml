@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.zes.jetpackdemo.BlankFragment"
+        android:label="fragment_blank"
+        app:startDestination="@id/action_blankFragment_to_blankFragment2"
+        tools:layout="@layout/fragment_blank">
+        <action
+            android:id="@+id/action_blankFragment_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
+        <argument
+            android:name="user"
+            android:defaultValue="default"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.zes.jetpackdemo.BlankFragment2"
+        android:label="fragment_blank2"
+        app:startDestination="@id/action_blankFragment2_to_blankFragment3"
+        tools:layout="@layout/fragment_blank2">
+        <argument
+            android:name="user_name"
+            android:defaultValue="default"
+            app:argType="string" />
+        <argument
+            android:name="person"
+            android:defaultValue="@null"
+            app:argType="com.zes.jetpackdemo.Person"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_blankFragment2_to_blankFragment3"
+            app:destination="@id/blankFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment3"
+        android:name="com.zes.jetpackdemo.BlankFragment3"
+        android:label="blank_fragment"
+        tools:layout="@layout/blank_fragment">
+        <argument
+            android:name="user_name"
+            android:defaultValue="default"
+            app:argType="string" />
+    </fragment>
+</navigation>
